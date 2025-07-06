@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WME Closure Helper
 // @namespace    https://greasyfork.org/en/users/673666-fourloop
-// @version      2025.02.14.01
+// @version      2025.07.05.01
 // @description  A script to help out with WME closure efforts! :D
 // @author       fourLoop & maintained by jm6087 and fuji2086
 // @match        https://beta.waze.com/*editor*
@@ -1307,10 +1307,7 @@ var G_AMOUNTOFPRESETS = 100;
     function changeDateField(element, newDate) {
         const newDateObj = $(element).data('daterangepicker')
         newDateObj.setStartDate(newDate)
-        $(element).trigger(
-            'apply.daterangepicker',
-            [newDateObj]
-        )
+        $(element).val(newDate).change()
     }
 
     function changeTimeField($element, newtime) {
